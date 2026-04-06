@@ -1,0 +1,12 @@
+runtime: python39 # You can use any supported runtime (e.g., nodejs18, php81)
+
+handlers:
+  # Map the root URL to your index.html file
+  - url: /
+    static_files: index.html
+    upload: index.html
+
+  # Map all other requests to the current directory (for CSS, JS, Images)
+  - url: /(.*)
+    static_files: \1
+    upload: (.*)
